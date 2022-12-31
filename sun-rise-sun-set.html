@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An SVG Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        html,
+        body {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        body>svg {
+            max-width: 500px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="-4 -4 8 8" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="sun" fill="orange">
+                <circle cx="0" cy="0" r="1.8" />
+                <polygon id="spike" points="-0.5,2.2 0.5,2.2 0,4"></polygon>
+                <use href="#spike" transform="rotate(45 0 0)" />
+                <use href="#spike" transform="rotate(90 0 0)" />
+                <use href="#spike" transform="rotate(135 0 0)" />
+                <use href="#spike" transform="rotate(180 0 0)" />
+                <use href="#spike" transform="rotate(-45 0 0)" />
+                <use href="#spike" transform="rotate(-90 0 0)" />
+                <use href="#spike" transform="rotate(-135 0 0)" />
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
+                    dur="1s" repeatCount="indefinite" />
+            </g>
+            <g id="moon" fill="lightyellow">
+                <circle cx="0" cy="0" r="1.8" />
+                <!-- <polygon id="spike" points="-0.5,2.2 0.5,2.2 0,4"></polygon>
+                <use href="#spike" transform="rotate(45 0 0)" />
+                <use href="#spike" transform="rotate(90 0 0)" />
+                <use href="#spike" transform="rotate(135 0 0)" />
+                <use href="#spike" transform="rotate(180 0 0)" />
+                <use href="#spike" transform="rotate(-45 0 0)" />
+                <use href="#spike" transform="rotate(-90 0 0)" />
+                <use href="#spike" transform="rotate(-135 0 0)" />
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
+                    dur="1s" repeatCount="indefinite" /> -->
+            </g>
+            <g id="sky">
+                <rect x="-4" y="-4" width="8" height="4">
+                    <animate attributeName="fill" values="white;antiquewhite;purple;darkblue;darkblue;purple;antiquewhite;white" dur="6s" repeatCount="indefinite" />
+                </rect>
+            </g>
+            <g id="ground">
+                <rect x="-4" y="0" width="8" height="4" fill="grey" />
+            </g>
+        </defs>
+        <use href="#sky" />
+        <g>
+            <use href="#sun" transform="translate(0 -3) scale(0.2)" />
+            <use href="#moon" transform="translate(0 3) scale(0.2)" />
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="-360 0 0"
+                dur="6s" repeatCount="indefinite" />
+        </g>
+        <use href="#ground" />
+    </svg>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An SVG Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        html,
+        body {
+            max-width: 500px;
+            max-height: 1500px;
+        }
+
+        body>svg {
+            max-width: 500px;
+            max-height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="-127 -125 250 250" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <line id="u0" x1="0" y1="0" x2="0" y2="27" stroke="lightblue" stroke-linecap="round" stroke-width="3" />
+            <g id="u1">
+                <use href="#u0" />
+                <g transform="translate(0 27)">
+                    <use href="#u0" transform="scale(0.667)" />
+                    <use href="#u0" transform="scale(0.667) rotate(-60 0 0)" />
+                    <use href="#u0" transform="scale(0.667) rotate(+60 0 0)" />
+                </g>
+            </g>
+            <g id="u2">
+                <use href="#u0" />
+                <g transform="translate(0 27)">
+                    <use href="#u1" transform="scale(0.667)" />
+                    <use href="#u0" transform="scale(0.667) rotate(-60 0 0)" />
+                    <use href="#u0" transform="scale(0.667) rotate(+60 0 0)" />
+                </g>
+            </g>
+            <g id="u3">
+                <use href="#u0" />
+                <g transform="translate(0 27)">
+                    <use href="#u2" transform="scale(0.667)" />
+                    <use href="#u1" transform="scale(0.667) rotate(-60 0 0)" />
+                    <use href="#u1" transform="scale(0.667) rotate(+60 0 0)" />
+                </g>
+            </g>
+            <g id="u4">
+                <use href="#u0" />
+                <g transform="translate(0 27)">
+                    <use href="#u3" transform="scale(0.667)" />
+                    <use href="#u2" transform="scale(0.667) rotate(-60 0 0)" />
+                    <use href="#u2" transform="scale(0.667) rotate(+60 0 0)" />
+                </g>
+            </g>
+            <g id="snowflake">
+                <use id="snowflake-piece" href="#u3" />
+                <use href="#snowflake-piece" transform="rotate(-60 0 0)" />
+                <use href="#snowflake-piece" transform="rotate(+60 0 0)" />
+                <use href="#snowflake-piece" transform="rotate(-120 0 0)" />
+                <use href="#snowflake-piece" transform="rotate(+120 0 0)" />
+                <use href="#snowflake-piece" transform="rotate(180 0 0)" />
+            </g>
+            <g id="rotating-snowflake">
+                <use href="#snowflake" />
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
+                    dur="2s" repeatCount="indefinite" />
+
+            </g>
+            <g id="rotating-snowflake-1">
+                <use href="#snowflake" />
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
+                    dur="2.5s" repeatCount="indefinite" />
+
+            </g>
+            <g id="rotating-snowflake-2">
+                <use href="#snowflake" />
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
+                    dur="1.5s" repeatCount="indefinite" />
+
+            </g>
+        </defs>
+        <g>
+            <use href="#rotating-snowflake" transform="scale(0.3)" />
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="50 -180" to="50 +180"
+                dur="5s" repeatCount="indefinite" />
+        </g>
+        <g>
+            <use href="#rotating-snowflake-1" transform="scale(0.2)" />
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="15 -200" to="15 +180"
+                dur="5s" repeatCount="indefinite" />
+        </g>
+        <g>
+            <use href="#rotating-snowflake-2" transform="scale(0.27)" />
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="-50 -150" to="-50 +180"
+                dur="5s" repeatCount="indefinite" />
+        </g>
+    </svg>
+    <h1>To Emma</h1>
+</body>
+
+</html>

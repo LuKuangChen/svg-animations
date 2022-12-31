@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An SVG Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        html,
+        body {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        body>svg {
+            max-width: 500px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="4" cy="4" r="4" fill="black" />
+        <g>
+            <circle cx="4" cy="4" r="2" fill="white" transform="translate(2 0)"></circle>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 4 4" to="360 4 4"
+                dur="5s" repeatCount="indefinite" />
+        </g>
+        <g>
+            <circle cx="4" cy="4" r="1" fill="black" transform="translate(1 0)"></circle>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 4 4" to="360 4 4"
+                dur="5s" repeatCount="indefinite" />
+        </g>
+    </svg>
+</body>
+
+</html>
