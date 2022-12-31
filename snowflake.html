@@ -10,23 +10,24 @@
             padding: 0;
             margin: 0;
             border: 0;
+            box-sizing: border-box;
         }
 
         html,
         body {
             max-width: 500px;
-            max-height: 1500px;
+            max-height: 500px;
         }
 
         body>svg {
             max-width: 500px;
-            max-height: 1500px;
+            max-height: 500px;
         }
     </style>
 </head>
 
 <body>
-    <svg viewBox="-127 -125 250 250" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="-125 -125 250 250" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <line id="u0" x1="0" y1="0" x2="0" y2="27" stroke="lightblue" stroke-linecap="round" stroke-width="3" />
             <g id="u1">
@@ -73,38 +74,10 @@
                 <use href="#snowflake" />
                 <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
                     dur="2s" repeatCount="indefinite" />
-
-            </g>
-            <g id="rotating-snowflake-1">
-                <use href="#snowflake" />
-                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
-                    dur="2.5s" repeatCount="indefinite" />
-
-            </g>
-            <g id="rotating-snowflake-2">
-                <use href="#snowflake" />
-                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0"
-                    dur="1.5s" repeatCount="indefinite" />
-
             </g>
         </defs>
-        <g>
-            <use href="#rotating-snowflake" transform="scale(0.3)" />
-            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="50 -180" to="50 +180"
-                dur="5s" repeatCount="indefinite" />
-        </g>
-        <g>
-            <use href="#rotating-snowflake-1" transform="scale(0.2)" />
-            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="15 -200" to="15 +180"
-                dur="5s" repeatCount="indefinite" />
-        </g>
-        <g>
-            <use href="#rotating-snowflake-2" transform="scale(0.27)" />
-            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="-50 -150" to="-50 +180"
-                dur="5s" repeatCount="indefinite" />
-        </g>
+        <use href="#rotating-snowflake" transform="scale(0.5)" />
     </svg>
-    <h1>To Emma</h1>
 </body>
 
 </html>
