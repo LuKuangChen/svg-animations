@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An SVG Animation</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        html,
+        body {
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        body>svg {
+            max-width: 500px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="-25 -25 50 50" xmlns="http://www.w3.org/2000/svg">
+        <g id="leg-1" stroke="black" fill="none" stroke-linecap="round">
+            <line x1="0" y1="0" x2="0" y2="10" />
+            <g>
+                <line x1="0" y1="10" x2="0" y2="20" />
+                <g>
+                    <line x1="0" y1="20" x2="-5" y2="20" />
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                        values="0 0 20; -10 0 20; 0 0 20" dur="3s" repeatCount="indefinite" />
+                </g>
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                    values="0 0 10; -30 0 10; 0 0 10" dur="3s" repeatCount="indefinite" />
+            </g>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 0 0; -20 0 0; 0 0 0"
+                dur="3s" repeatCount="indefinite" />
+        </g>
+        <g id="leg-2" stroke="black" fill="none" stroke-linecap="round">
+            <line x1="0" y1="0" x2="0" y2="10" />
+            <g>
+                <line x1="0" y1="10" x2="0" y2="20" />
+                <g>
+                    <line x1="0" y1="20" x2="-5" y2="20" />
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                        values="-10 0 20; 0 0 20; -10 0 20" dur="3s" repeatCount="indefinite" />
+                </g>
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                    values="-30 0 10; 0 0 10; -30 0 10" dur="3s" repeatCount="indefinite" />
+            </g>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="-20 0 0; 0 0 0; -20 0 0"
+                dur="3s" repeatCount="indefinite" />
+        </g>
+    </svg>
+</body>
+
+</html>
